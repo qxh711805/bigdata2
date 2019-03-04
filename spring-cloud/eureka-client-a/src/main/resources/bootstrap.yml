@@ -1,0 +1,28 @@
+server:
+  port: 8763
+spring:
+  application:
+    name: client-a
+  cloud:
+    config:
+      uri: http://localhost:4444/   # config server服务地址
+      profile: dev   # 配置文件中的环境
+  kafka:
+    bootstrap-servers: 10.0.0.155:9092
+    template:
+      default-topic: topicA
+
+# 监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh   # 刷新
+
+
+# /{application}/{profile}/[{label}]
+# /{application}-{profile}.yml
+# /[{label}]/{application}-{profile}.yml
+# /{application}-{profile}.properties
+# /[{label}]/{application}-{profile}.properties
+

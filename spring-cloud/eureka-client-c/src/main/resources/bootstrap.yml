@@ -1,0 +1,11 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: client-c    # \u663E\u793A\u5728 Eureka \u670D\u52A1\u4E2D\u5E94\u7528\u540D\u79F0
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      uri: http://localhost:4444/   # config server中心的地址

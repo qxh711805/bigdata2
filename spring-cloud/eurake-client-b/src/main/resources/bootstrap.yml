@@ -1,0 +1,22 @@
+server:
+  port: 8764
+spring:
+  application:
+    name: client-b
+  cloud:
+    config:
+      uri: http://localhost:4444/   # config server服务地址
+      profile: dev   # 配置文件中的环境
+
+
+# /{application}/{profile}/[{label}]
+# /{application}-{profile}.yml
+# /[{label}]/{application}-{profile}.yml
+# /{application}-{profile}.properties
+# /[{label}]/{application}-{profile}.properties
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
